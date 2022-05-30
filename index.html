@@ -1,0 +1,107 @@
+<html>
+<head>
+  <meta charset = "UTF-8" content="width=device-width">
+  <link rel="stylesheet" href="\static\css\style.css">
+</head>
+
+<body>  
+
+
+<div class="container">
+
+<div class="title">Flight Price Prediction Using RandomForest Regressor</div>
+<div class="form">
+<form action="/submit" method="POST">
+
+<div class = "input_field">
+
+<div class="dlab"><label for="totalstops">Total Stops: </label><br> </div>
+<select name="Total_Stops" id="totalstops" class="select">
+    <option value="0">0 stop</option>
+    <option value="1">1 stop</option>
+    <option value="2">2 stop</option>
+    <option value="3">3 stop</option>
+    <option value="4">4 stop</option>
+</select>
+</div>
+
+<div class = "input_field">
+<label for="jday">Journey Day: </label>
+<input type="number" name="Journey_day" min=0 max=30 id="jday" placeholder="0-30" class="input">
+<label for="jmonth">Journey month: </label>
+<input type="number" name="Journey_month" min=0 max=12 id="jmonth" placeholder="0-12" class="input">
+</div>
+
+<div class = "input_field">
+<label for="dhour">Departure Hour: </label>
+<input type="number" name="Dep_hour" min=0 max=24 id="dhour" placeholder="0-24" class="input">
+<label for="dmin">Departure Min: </label>
+<input type="number" name="Dep_min" min=0 max=60 id="dmin" placeholder="0-60" class="input">
+</div>
+
+<div class = "input_field">
+<label for="ahour">Arrival Hour: </label>
+<input type="number" name="Arrival_hour" min=0 max=24 id="ahour" placeholder="0-24" class="input">
+<label for="amin">Arrival Min: </label>
+<input type="number" name="Arrival_min" min=0 max=60 id="amin" placeholder="0-60" class="input">
+</div>
+
+<div class = "input_field">
+<label for="duhour">Duration hour</label>
+<input type="number" name="Duration_hours" min=0 max=24 id="duhour" placeholder="0-24" class="input">
+<label for="dumin">Duration min</label>
+<input type="number" name="Duration_min" min=0 max=60 id="dumin" placeholder="0-60" class="input">
+</div>
+
+<div class = "input_field">
+<div class="dlab"><label for="airline">Airline: </label></div>
+<select name="Airline" id="airline" class="select">
+    <option value="JetAirways">JetAirways</option>
+    <option value="IndiGo">IndiGo</option>
+    <option value="AirIndia">AirIndia</option>
+    <option value="MultipleCarriers">MultipleCarriers</option>
+    <option value="SpiceJet">SpiceJet</option>
+    <option value="Vistara">Vistara</option>
+    <option value="AirAsia">Air Asia</option>
+    <option value="GoAir">GoAir</option>
+    <option value="MultiplecarriersPremiumeconomy">McPc</option>
+    <option value="JetAirwaysBusiness">JetAirwaysBusiness</option>
+    <option value="VistaraPremiumEconomy">Vistara Premium Economy</option>
+    <option value="Trujet">Trujet</option>
+</select>
+</div>
+
+<div class = "input_field">
+<div class="dlab"><label for="source">Source: </label></div>
+<select name="Source" id="source" class="select">
+    <option value="Delhi">Delhi</option>
+    <option value="Kolkata">Kolkata</option>
+    <option value="Banglore">Bangalore</option>
+    <option value="Chennai">Chennai</option>
+    <option value="Mumbai">Mumbai</option>
+</select>
+</div>
+
+<div class = "input_field">
+<div class="dlab"><label for="destination">Destination: </label></div>
+<select name="Destination" id="destination" class="select">
+    <option value="Cochin">Cochin</option>
+    <option value="Bangalore">Bangalore</option>
+    <option value="Delhi">Delhi</option>
+    <option value="Hyderabad">Hyderabad</option>
+    <option value="Kolkata">Kolkata</option>
+    <option value="NewDelhi">NewDelhi</option>
+</select>
+</div>
+
+<div class = "input_field">
+<input type="submit" value="Submit" class="btn">
+</div>
+
+</form>    
+<div class="pred"> {{prediction_text}} </div>
+
+</div>
+</div>
+</body>
+</html>
